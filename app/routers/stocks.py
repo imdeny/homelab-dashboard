@@ -19,9 +19,11 @@ def get_stocks():
     results = []
     for symbol in tickers:
         try:
-            info = yf.Ticker(symbol).fast_info
-            price = round(info.last_price, 2)
-            prev = round(info.previous_close, 2)
+            hist = yf.Ticker(symbol).history(period="5d")
+            if len(hist) < 2:
+                raise ValueError("Not enough data")
+            price = round(float(hist["Close"].iloc[-1]), 2)
+            prev = round(float(hist["Close"].iloc[-2]), 2)
             change = round(price - prev, 2)
             results.append({
                 "ticker": symbol,
