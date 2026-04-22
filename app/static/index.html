@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homelab Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header>
+    <h1>&#127968; Homelab Dashboard</h1>
+    <span id="last-updated"></span>
+  </header>
+
+  <main>
+    <!-- System Stats -->
+    <section class="card" id="system-card">
+      <h2>System</h2>
+      <div class="stat-row">
+        <span class="label">CPU</span>
+        <div class="bar-wrap"><div class="bar" id="cpu-bar"></div></div>
+        <span class="value" id="cpu-val">--</span>
+      </div>
+      <div class="stat-row">
+        <span class="label">RAM</span>
+        <div class="bar-wrap"><div class="bar" id="ram-bar"></div></div>
+        <span class="value" id="ram-val">--</span>
+      </div>
+      <div class="stat-row">
+        <span class="label">Disk</span>
+        <div class="bar-wrap"><div class="bar" id="disk-bar"></div></div>
+        <span class="value" id="disk-val">--</span>
+      </div>
+      <div class="stat-grid">
+        <div class="stat-box">
+          <div class="stat-box-label">Temp</div>
+          <div class="stat-box-value" id="temp-val">--</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-box-label">Uptime</div>
+          <div class="stat-box-value" id="uptime-val">--</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Docker Containers -->
+    <section class="card" id="containers-card">
+      <h2>Containers</h2>
+      <div id="containers-list"><div class="loading">Loading...</div></div>
+    </section>
+
+    <!-- Stocks -->
+    <section class="card wide" id="stocks-card">
+      <h2>Stock Watchlist</h2>
+      <div id="stocks-list" class="stocks-grid"><div class="loading">Loading...</div></div>
+    </section>
+
+    <!-- Deals -->
+    <section class="card full" id="deals-card">
+      <h2>Game Deals &amp; Free Games</h2>
+      <div id="deals-list" class="deals-grid"><div class="loading">Loading...</div></div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

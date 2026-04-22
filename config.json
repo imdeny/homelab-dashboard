@@ -1,0 +1,5 @@
+{
+  "stocks": ["AAPL", "TSLA", "NVDA", "SPY", "QQQ"],
+  "discord_bot_container": "discord-bot",
+  "deals_page_size": 8
+}
